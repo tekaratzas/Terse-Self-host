@@ -110,12 +110,12 @@ export type ResendGeneratedTools = {
 
 export const resendTools: ResendGeneratedTools = {
     sendTemplate: (params: ResendSendTemplateParams) =>
-        TerseAgent.executeTool<ResendSendTemplateResult>("resend_send_template", { ...(params), integrationId: "cmrml2q1t004wj32acuaf50ox" }),
+        TerseAgent.executeTool<ResendSendTemplateResult>("resend_send_template", { ...(params), integrationId: "cmrjspd6m0001y5fnew1q4he6" }),
 }
 
 // ── Resend skill ──────────────────────────────────────────────
 
 /** Resend — send transactional email using generated published templates */
 export function resendSkill(): TypedSkill<"resend_send_template"> {
-    return new ResendOutputConfig("cmrml2q1t004wj32acuaf50ox")
+    return new ResendOutputConfig("cmrjspd6m0001y5fnew1q4he6")
 }

@@ -313,34 +313,34 @@ export type GithubTrigger = GithubPushTrigger | GithubPRTrigger | GithubIssueCom
 export const githubTriggers = {
     /** Trigger on push to a repository */
     onPush(opts: { repo: Repos }): TypedTrigger<GithubPushTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.PUSH])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.PUSH])
     },
     /** Trigger when a pull request is opened */
     onPROpened(opts: { repo: Repos }): TypedTrigger<GithubPROpenedTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.PR_OPENED])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.PR_OPENED])
     },
     /** Trigger when a pull request is merged */
     onPRMerged(opts: { repo: Repos }): TypedTrigger<GithubPRMergedTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.PR_MERGED])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.PR_MERGED])
     },
     /** Trigger when a pull request is closed */
     onPRClosed(opts: { repo: Repos }): TypedTrigger<GithubPRClosedTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.PR_CLOSED])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.PR_CLOSED])
     },
     /** Trigger when a pull request is synchronized */
     onPRSynchronized(opts: { repo: Repos }): TypedTrigger<GithubPRSynchronizedTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.PR_SYNCHRONIZE])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.PR_SYNCHRONIZE])
     },
     /** Trigger on any pull request event */
     onPR(opts: { repo: Repos }): TypedTrigger<GithubPRTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.PR_OPENED, GitHubEventType.PR_MERGED, GitHubEventType.PR_CLOSED, GitHubEventType.PR_SYNCHRONIZE])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.PR_OPENED, GitHubEventType.PR_MERGED, GitHubEventType.PR_CLOSED, GitHubEventType.PR_SYNCHRONIZE])
     },
     /** Trigger when a comment is created on an issue or pull request */
     onIssueComment(opts: { repo: Repos }): TypedTrigger<GithubIssueCommentCreatedTrigger> {
-        return new GitHubConfig("148557251", [opts.repo.repositoryId], [GitHubEventType.ISSUE_COMMENT_CREATED])
+        return new GitHubConfig("120409451", [opts.repo.repositoryId], [GitHubEventType.ISSUE_COMMENT_CREATED])
     },
     /** Trigger on specific GitHub events for the given repositories */
     trigger(opts: { repos: Repos[]; eventTypes?: GitHubEventType[] }): TypedTrigger<GithubTrigger> {
-        return new GitHubConfig("148557251", opts.repos.map(r => r.repositoryId), opts.eventTypes)
+        return new GitHubConfig("120409451", opts.repos.map(r => r.repositoryId), opts.eventTypes)
     },
 }

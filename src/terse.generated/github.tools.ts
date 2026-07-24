@@ -9,7 +9,7 @@ import type { RunHistoryAction } from "./common.js"
 export class GithubOwner {
     constructor(public readonly name: string) {}
 
-    static Anthonyjacobzhang = new GithubOwner("Anthonyjacobzhang")
+    static TerseAI = new GithubOwner("TerseAI")
 }
 
 export class Repos {
@@ -20,18 +20,59 @@ export class Repos {
         public readonly fullName: string
     ) {}
 
-    static Anthonyjacobzhang = {
-        KnowYourVc: new Repos(96366698, "know-your-vc", GithubOwner.Anthonyjacobzhang, "Anthonyjacobzhang/know-your-vc"),
+    static TerseAI = {
+        TerseLandingPage: new Repos(1049979398, "Terse-landing-page", GithubOwner.TerseAI, "TerseAI/Terse-landing-page"),
+        SorIngestionPoc: new Repos(1065380348, "sor-ingestion-poc", GithubOwner.TerseAI, "TerseAI/sor-ingestion-poc"),
+        SorConfluenceIngestion: new Repos(1068097633, "sor-confluence-ingestion", GithubOwner.TerseAI, "TerseAI/sor-confluence-ingestion"),
+        Terse: new Repos(1076128380, "Terse", GithubOwner.TerseAI, "TerseAI/Terse"),
+        LandingPage: new Repos(1089214477, "Landing-Page", GithubOwner.TerseAI, "TerseAI/Landing-Page"),
+        RrwebViewerAgentService: new Repos(1128446417, "rrweb-viewer-agent-service", GithubOwner.TerseAI, "TerseAI/rrweb-viewer-agent-service"),
+        VideoAnalyser: new Repos(1135185431, "video-analyser", GithubOwner.TerseAI, "TerseAI/video-analyser"),
+        OpenAIAgentsSdkPersistenceBug: new Repos(1163485219, "openAIAgentsSdkPersistenceBug", GithubOwner.TerseAI, "TerseAI/openAIAgentsSdkPersistenceBug"),
+        OpenAIAgentsSdkMultiProvider: new Repos(1174739616, "openAIAgentsSdkMultiProvider", GithubOwner.TerseAI, "TerseAI/openAIAgentsSdkMultiProvider"),
+        Docs: new Repos(1189882316, "docs", GithubOwner.TerseAI, "TerseAI/docs"),
+        TerseJobs: new Repos(1210580853, "Terse-Jobs", GithubOwner.TerseAI, "TerseAI/Terse-Jobs"),
+        MultiModelSupport: new Repos(1222576887, "MultiModelSupport", GithubOwner.TerseAI, "TerseAI/MultiModelSupport"),
+        OpenAISDKSample: new Repos(1222995744, "OpenAI-SDK-Sample", GithubOwner.TerseAI, "TerseAI/OpenAI-SDK-Sample"),
+        TerseSkill: new Repos(1223712746, "terse-skill", GithubOwner.TerseAI, "TerseAI/terse-skill"),
+        TerseCommercial: new Repos(1225725324, "terse-commercial", GithubOwner.TerseAI, "TerseAI/terse-commercial"),
+        SandboxTracing: new Repos(1245052308, "Sandbox-tracing", GithubOwner.TerseAI, "TerseAI/Sandbox-tracing"),
+        SampleProjects: new Repos(1249355222, "SampleProjects", GithubOwner.TerseAI, "TerseAI/SampleProjects"),
+        TerseLitellm: new Repos(1272281041, "terse-litellm", GithubOwner.TerseAI, "TerseAI/terse-litellm"),
+        RateCardSync: new Repos(1274545227, "rate-card-sync", GithubOwner.TerseAI, "TerseAI/rate-card-sync"),
+        ExampleGtmWorkflows: new Repos(1297886629, "example-gtm-workflows", GithubOwner.TerseAI, "TerseAI/example-gtm-workflows"),
+        TerseAttioSync: new Repos(1303276714, "Terse-Attio-Sync", GithubOwner.TerseAI, "TerseAI/Terse-Attio-Sync"),
+        TerseResend: new Repos(1304023705, "terse-resend", GithubOwner.TerseAI, "TerseAI/terse-resend"),
+        AutomationbenchContextAsCode: new Repos(1307039327, "automationbench-context-as-code", GithubOwner.TerseAI, "TerseAI/automationbench-context-as-code"),
+        TerseDataPlaneStarter: new Repos(1310376815, "terse-data-plane-starter", GithubOwner.TerseAI, "TerseAI/terse-data-plane-starter"),
     } as const
 }
 
 const __githubRepoNameToFullName = new Map<string, string>([
+    ["automationbench-context-as-code", "TerseAI/automationbench-context-as-code"],
     ["docs", "TerseAI/docs"],
-    ["know-your-vc", "Anthonyjacobzhang/know-your-vc"],
+    ["example-gtm-workflows", "TerseAI/example-gtm-workflows"],
     ["Landing-Page", "TerseAI/Landing-Page"],
+    ["MultiModelSupport", "TerseAI/MultiModelSupport"],
+    ["OpenAI-SDK-Sample", "TerseAI/OpenAI-SDK-Sample"],
+    ["openAIAgentsSdkMultiProvider", "TerseAI/openAIAgentsSdkMultiProvider"],
+    ["openAIAgentsSdkPersistenceBug", "TerseAI/openAIAgentsSdkPersistenceBug"],
     ["rate-card-sync", "TerseAI/rate-card-sync"],
+    ["rrweb-viewer-agent-service", "TerseAI/rrweb-viewer-agent-service"],
+    ["SampleProjects", "TerseAI/SampleProjects"],
+    ["Sandbox-tracing", "TerseAI/Sandbox-tracing"],
+    ["sor-confluence-ingestion", "TerseAI/sor-confluence-ingestion"],
+    ["sor-ingestion-poc", "TerseAI/sor-ingestion-poc"],
     ["Terse", "TerseAI/Terse"],
+    ["Terse-Attio-Sync", "TerseAI/Terse-Attio-Sync"],
     ["terse-commercial", "TerseAI/terse-commercial"],
+    ["terse-data-plane-starter", "TerseAI/terse-data-plane-starter"],
+    ["Terse-Jobs", "TerseAI/Terse-Jobs"],
+    ["Terse-landing-page", "TerseAI/Terse-landing-page"],
+    ["terse-litellm", "TerseAI/terse-litellm"],
+    ["terse-resend", "TerseAI/terse-resend"],
+    ["terse-skill", "TerseAI/terse-skill"],
+    ["video-analyser", "TerseAI/video-analyser"],
 ])
 
 function __normalizeGitHubRepos(repo: unknown): string {
@@ -609,5 +650,5 @@ export const githubTools: GithubGeneratedTools = {
 
 /** GitHub — read code and pull requests from the given repositories */
 export function githubSkill(opts: { repos: Repos[] }): TypedSkill<never> {
-    return new GitHubConfig("148557251", opts.repos.map(r => r.repositoryId))
+    return new GitHubConfig("120409451", opts.repos.map(r => r.repositoryId))
 }

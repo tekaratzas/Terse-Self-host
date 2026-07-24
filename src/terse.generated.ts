@@ -9,7 +9,6 @@
 // The terse.generated/ folder holds the per-integration declarations. Read only the files you need:
 //   <integration>.triggers.ts — trigger factories (Triggers.<integration>.*) and their payload types
 //   <integration>.tools.ts    — typed tool methods (toolbox.<integration>.*), their Params/Result types, pinned resources, and skills
-//   <integration>.schemas.ts  — workspace-specific value/record types (Attio objects and lists)
 //   terse.triggers.ts / terse.tools.ts — built-in triggers (schedule, webhook, webMonitor), built-in tools, and the web/imageEdit/memory skills
 // Below the index, this file only composes: the Triggers/Skills/toolbox aggregates re-export what the folder defines.
 
@@ -77,14 +76,14 @@
 // terse.generated/github.tools.ts
 //   L9    class GithubOwner
 //   L15   class Repos
-//   L518  toolbox.github.searchCode()  (params L78)
-//   L537  toolbox.github.grepCode()  (params L152)
-//   L545  toolbox.github.readFile()  (params L212)
-//   L553  toolbox.github.listDirectory()  (params L253)
-//   L562  toolbox.github.listPullRequests()  (params L308)
-//   L571  toolbox.github.listCommits()  (params L379)
-//   L588  toolbox.github.summarizePRDiff()  (params L453)
-//   L611  function githubSkill()
+//   L559  toolbox.github.searchCode()  (params L119)
+//   L578  toolbox.github.grepCode()  (params L193)
+//   L586  toolbox.github.readFile()  (params L253)
+//   L594  toolbox.github.listDirectory()  (params L294)
+//   L603  toolbox.github.listPullRequests()  (params L349)
+//   L612  toolbox.github.listCommits()  (params L420)
+//   L629  toolbox.github.summarizePRDiff()  (params L494)
+//   L652  function githubSkill()
 // terse.generated/github.triggers.ts
 //   L315  Triggers.github.onPush()
 //   L319  Triggers.github.onPROpened()
@@ -94,87 +93,26 @@
 //   L335  Triggers.github.onPR()
 //   L339  Triggers.github.onIssueComment()
 //   L343  Triggers.github.trigger()
-// terse.generated/hey_reach.tools.ts
-//   L6  class HeyReachCampaign
-// terse.generated/hey_reach.triggers.ts
-//   L497  Triggers.heyReach.onConnectionRequestSent()
-//   L501  Triggers.heyReach.onConnectionRequestAccepted()
-//   L505  Triggers.heyReach.onMessageSent()
-//   L509  Triggers.heyReach.onMessageReplyReceived()
-//   L513  Triggers.heyReach.onInmailSent()
-//   L517  Triggers.heyReach.onInmailReplyReceived()
-//   L521  Triggers.heyReach.onFollowSent()
-//   L525  Triggers.heyReach.onLikedPost()
-//   L529  Triggers.heyReach.onViewedProfile()
-//   L533  Triggers.heyReach.onCampaignCompleted()
-//   L537  Triggers.heyReach.onLeadTagUpdated()
-//   L541  Triggers.heyReach.trigger()
 // terse.generated/resend.tools.ts
 //   L9    type ResendTemplateVariableValue
 //   L11   type GeneratedResendTemplate
 //   L51   type ResendTemplate
 //   L108  toolbox.resend.sendTemplate()  (params L88)
 //   L119  function resendSkill()
-// terse.generated/apollo.tools.ts
-//   L306  toolbox.apollo.enrichPerson()  (params L12)
-//   L308  toolbox.apollo.bulkEnrichPeople()  (params L82)
-//   L310  toolbox.apollo.enrichOrganization()  (params L158)
-//   L312  toolbox.apollo.searchPeople()  (params L193)
-//   L314  toolbox.apollo.listJobPostings()  (params L271)
-//   L333  function apolloSkill()
-// terse.generated/gmail.tools.ts
-//   L134  toolbox.gmail.sendEmail()  (params L17)
-//   L136  toolbox.gmail.createDraft()  (params L75)
-//   L149  function gmailSkill()
-//   L154  function gmailDraftSkill()
-// terse.generated/gmail.triggers.ts
-//   L40  Triggers.gmail.onEmail()
-//   L44  Triggers.gmail.trigger()
-// terse.generated/linear.tools.ts
-//   L9    class LinearTeam
-//   L15   class LinearProject
-//   L352  toolbox.linear.searchTickets()  (params L31)
-//   L354  toolbox.linear.getTeams()  (params L96)
-//   L356  toolbox.linear.getStates()  (params L111)
-//   L358  toolbox.linear.getLabels()  (params L133)
-//   L360  toolbox.linear.getProjects()  (params L154)
-//   L362  toolbox.linear.getUsers()  (params L175)
-//   L364  toolbox.linear.createTicket()  (params L191)
-//   L366  toolbox.linear.updateTicket()  (params L221)
-//   L368  toolbox.linear.addComment()  (params L275)
-//   L371  toolbox.linear.readTicket()  (params L301)
-//   L400  function linearSkill()
-// terse.generated/linear.triggers.ts
-//   L173  Triggers.linear.onIssueCreated()
-//   L177  Triggers.linear.onIssueUpdated()
-//   L181  Triggers.linear.onComment()
-//   L185  Triggers.linear.trigger()
 // terse.generated/slack.tools.ts
 //   L9    class SlackChannel
-//   L36   class SlackUser
-//   L179  toolbox.slack.sendMessage()  (params L49)
-//   L182  toolbox.slack.listUsers()  (params L86)
-//   L186  toolbox.slack.listChannels()  (params L109)
-//   L190  toolbox.slack.readConversation()  (params L145)
-//   L207  function slackSkill()
+//   L16   class SlackUser
+//   L159  toolbox.slack.sendMessage()  (params L29)
+//   L162  toolbox.slack.listUsers()  (params L66)
+//   L166  toolbox.slack.listChannels()  (params L89)
+//   L170  toolbox.slack.readConversation()  (params L125)
+//   L187  function slackSkill()
 // terse.generated/slack.triggers.ts
 //   L89   Triggers.slack.onMessage()
 //   L93   Triggers.slack.onDm()
 //   L97   Triggers.slack.onAppMention()
 //   L101  Triggers.slack.onReactionAdded()
 //   L105  Triggers.slack.trigger()
-// terse.generated/notion.tools.ts
-//   L9    class NotionDatabase
-//   L15   class NotionPage
-//   L489  type NotionBlock
-//   L676  toolbox.notion.getDatasourceSchema()  (params L38)
-//   L719  toolbox.notion.queryDatabase()  (params L105)
-//   L723  toolbox.notion.createOrUpdateDatabaseRow()  (params L357)
-//   L728  toolbox.notion.createOrUpdatePageStandalone()  (params L386)
-//   L732  toolbox.notion.queryPage()  (params L414)
-//   L759  toolbox.notion.modifyBlocks()  (params L556)
-//   L767  toolbox.notion.listWorkspaceUsers()  (params L647)
-//   L790  function notionSkill()
 // terse.generated/posthog.tools.ts
 //   L9    class PosthogProject
 //   L22   type PosthogEventName
@@ -184,147 +122,6 @@
 //   L408  toolbox.posthog.listEventNames()  (params L266)
 //   L410  toolbox.posthog.searchEvents()  (params L326)
 //   L429  function posthogSkill()
-// terse.generated/launchdarkly.tools.ts
-//   L9    class LaunchDarklyProject
-//   L162  toolbox.launchdarkly.listFeatureFlags()  (params L20)
-//   L164  toolbox.launchdarkly.getFlagDetails()  (params L67)
-//   L177  function launchDarklySkill()
-// terse.generated/workos.tools.ts
-//   L111  toolbox.workos.listUsers()  (params L12)
-//   L113  toolbox.workos.listOrganizations()  (params L54)
-//   L115  toolbox.workos.getUser()  (params L86)
-//   L130  function workOSSkill()
-// terse.generated/workos.triggers.ts
-//   L241  Triggers.workOS.onUserCreated()
-//   L245  Triggers.workOS.onUserUpdated()
-//   L249  Triggers.workOS.onUserDeleted()
-//   L253  Triggers.workOS.onMembershipCreated()
-//   L257  Triggers.workOS.onMembershipUpdated()
-//   L261  Triggers.workOS.onMembershipDeleted()
-//   L265  Triggers.workOS.onMembershipChanged()
-//   L269  Triggers.workOS.onInvitationSent()
-//   L273  Triggers.workOS.onInvitationCreated()
-//   L277  Triggers.workOS.onInvitationResent()
-//   L281  Triggers.workOS.onInvitationAccepted()
-//   L285  Triggers.workOS.onInvitationRevoked()
-//   L289  Triggers.workOS.onOrganizationCreated()
-//   L293  Triggers.workOS.trigger()
-// terse.generated/attio.schemas.ts
-//   L48    type AttioWorkspaceRecordValues
-//   L59    type AttioWorkspaceInputValues
-//   L70    type AttioPersonRecordValues
-//   L121   type AttioPersonInputValues
-//   L172   type AttioCompanyRecordValues
-//   L210   type AttioCompanyInputValues
-//   L410   type AttioDealRecordValues
-//   L433   type AttioDealInputValues
-//   L456   type AttioUserRecordValues
-//   L469   type AttioUserInputValues
-//   L482   type AttioFeedbackRequestsEntryRecordValues
-//   L488   type AttioFeedbackRequestsEntryValues
-//   L494   type AttioICPProspectsEntryRecordValues
-//   L500   type AttioICPProspectsEntryValues
-//   L740   class AttioObject
-//   L884   type GeneratedAttioObject
-//   L891   class AttioList
-//   L919   type GeneratedAttioList
-//   L1867  type AttioValuesFor
-//   L1868  type AttioRecordValuesFor
-//   L1870  type AttioFilterFor
-//   L1884  type AttioEntryValuesFor
-//   L1885  type AttioEntryRecordValuesFor
-//   L1886  type AttioEntryFilterFor
-// terse.generated/attio.tools.ts
-//   L17   toolbox.attio.queryRecords()
-//   L19   toolbox.attio.searchRecords()
-//   L21   toolbox.attio.getRecord()
-//   L23   toolbox.attio.getAttributeHistory()
-//   L25   toolbox.attio.createRecord()
-//   L27   toolbox.attio.updateRecord()
-//   L29   toolbox.attio.upsertRecord()
-//   L31   toolbox.attio.deleteRecord()
-//   L33   toolbox.attio.listWorkspaceMembers()
-//   L35   toolbox.attio.getWorkspaceMember()
-//   L37   toolbox.attio.listTasks()
-//   L39   toolbox.attio.getTask()
-//   L41   toolbox.attio.createTask()
-//   L43   toolbox.attio.updateTask()
-//   L45   toolbox.attio.deleteTask()
-//   L47   toolbox.attio.listNotes()
-//   L49   toolbox.attio.getNote()
-//   L51   toolbox.attio.createNote()
-//   L53   toolbox.attio.deleteNote()
-//   L55   toolbox.attio.getComment()
-//   L57   toolbox.attio.listThreads()
-//   L59   toolbox.attio.getThread()
-//   L61   toolbox.attio.createComment()
-//   L63   toolbox.attio.deleteComment()
-//   L65   toolbox.attio.listLists()
-//   L67   toolbox.attio.getList()
-//   L69   toolbox.attio.createList()
-//   L71   toolbox.attio.updateList()
-//   L73   toolbox.attio.queryListEntries()
-//   L75   toolbox.attio.getListEntry()
-//   L77   toolbox.attio.addListEntry()
-//   L79   toolbox.attio.upsertListEntry()
-//   L81   toolbox.attio.updateListEntry()
-//   L83   toolbox.attio.removeListEntry()
-//   L85   toolbox.attio.listMeetings()
-//   L87   toolbox.attio.getMeeting()
-//   L89   toolbox.attio.listCallRecordings()
-//   L91   toolbox.attio.getCallTranscript()
-//   L93   toolbox.attio.listFiles()
-//   L95   toolbox.attio.getFile()
-//   L97   toolbox.attio.getFileDownloadUrl()
-//   L99   toolbox.attio.uploadFile()
-//   L101  toolbox.attio.deleteFile()
-//   L103  toolbox.attio.listObjects()
-//   L105  toolbox.attio.getObject()
-//   L107  toolbox.attio.listAttributes()
-//   L109  toolbox.attio.listStatuses()
-//   L111  toolbox.attio.listSelectOptions()
-//   L113  toolbox.attio.createObject()
-//   L115  toolbox.attio.updateObject()
-//   L117  toolbox.attio.createAttribute()
-//   L119  toolbox.attio.updateAttribute()
-//   L121  toolbox.attio.createStatus()
-//   L123  toolbox.attio.updateStatus()
-//   L125  toolbox.attio.createSelectOption()
-//   L127  toolbox.attio.updateSelectOption()
-//   L248  function attioSkill()
-// terse.generated/attio.triggers.ts
-//   L948   Triggers.attio.onCallRecordingCreated()
-//   L952   Triggers.attio.onCommentCreated()
-//   L956   Triggers.attio.onCommentResolved()
-//   L960   Triggers.attio.onCommentUnresolved()
-//   L964   Triggers.attio.onCommentDeleted()
-//   L968   Triggers.attio.onListCreated()
-//   L972   Triggers.attio.onListUpdated()
-//   L976   Triggers.attio.onListDeleted()
-//   L980   Triggers.attio.onListAttributeCreated()
-//   L984   Triggers.attio.onListAttributeUpdated()
-//   L988   Triggers.attio.onListEntryCreated()
-//   L992   Triggers.attio.onListEntryUpdated()
-//   L996   Triggers.attio.onListEntryDeleted()
-//   L1000  Triggers.attio.onObjectAttributeCreated()
-//   L1004  Triggers.attio.onObjectAttributeUpdated()
-//   L1008  Triggers.attio.onNoteCreated()
-//   L1012  Triggers.attio.onNoteContentUpdated()
-//   L1016  Triggers.attio.onNoteUpdated()
-//   L1020  Triggers.attio.onNoteDeleted()
-//   L1024  Triggers.attio.onRecordCreated()
-//   L1028  Triggers.attio.onRecordMerged()
-//   L1032  Triggers.attio.onRecordUpdated()
-//   L1036  Triggers.attio.onRecordDeleted()
-//   L1040  Triggers.attio.onTaskCreated()
-//   L1044  Triggers.attio.onTaskUpdated()
-//   L1048  Triggers.attio.onTaskDeleted()
-//   L1052  Triggers.attio.onWorkspaceMemberCreated()
-//   L1056  Triggers.attio.trigger()
-// terse.generated/snowflake.tools.ts
-//   L51  toolbox.snowflake.explainQuery()  (params L12)
-//   L53  toolbox.snowflake.executeQuery()  (params L32)
-//   L66  function snowflakeSkill()
 
 import { TerseAgent } from "terse-sdk"
 import { terseTools, webSkill, imageEditSkill, memorySkill } from "./terse.generated/terse.tools.js"
@@ -333,59 +130,23 @@ import { scheduleTriggers, webhookTriggers, webMonitorTriggers } from "./terse.g
 import { githubTools, githubSkill } from "./terse.generated/github.tools.js"
 import type { GithubGeneratedTools } from "./terse.generated/github.tools.js"
 import { githubTriggers } from "./terse.generated/github.triggers.js"
-import { heyReachTriggers } from "./terse.generated/hey_reach.triggers.js"
 import { resendTools, resendSkill } from "./terse.generated/resend.tools.js"
 import type { ResendGeneratedTools } from "./terse.generated/resend.tools.js"
-import { apolloTools, apolloSkill } from "./terse.generated/apollo.tools.js"
-import type { ApolloGeneratedTools } from "./terse.generated/apollo.tools.js"
-import { gmailTools, gmailSkill, gmailDraftSkill } from "./terse.generated/gmail.tools.js"
-import type { GmailGeneratedTools } from "./terse.generated/gmail.tools.js"
-import { gmailTriggers } from "./terse.generated/gmail.triggers.js"
-import { linearTools, linearSkill } from "./terse.generated/linear.tools.js"
-import type { LinearGeneratedTools } from "./terse.generated/linear.tools.js"
-import { linearTriggers } from "./terse.generated/linear.triggers.js"
 import { slackTools, slackSkill } from "./terse.generated/slack.tools.js"
 import type { SlackGeneratedTools } from "./terse.generated/slack.tools.js"
 import { slackTriggers } from "./terse.generated/slack.triggers.js"
-import { notionTools, notionSkill } from "./terse.generated/notion.tools.js"
-import type { NotionGeneratedTools } from "./terse.generated/notion.tools.js"
 import { posthogTools, posthogSkill } from "./terse.generated/posthog.tools.js"
 import type { PosthogGeneratedTools } from "./terse.generated/posthog.tools.js"
-import { launchdarklyTools, launchDarklySkill } from "./terse.generated/launchdarkly.tools.js"
-import type { LaunchdarklyGeneratedTools } from "./terse.generated/launchdarkly.tools.js"
-import { workosTools, workOSSkill } from "./terse.generated/workos.tools.js"
-import type { WorkosGeneratedTools } from "./terse.generated/workos.tools.js"
-import { workOSTriggers } from "./terse.generated/workos.triggers.js"
-import { attioTools, attioSkill } from "./terse.generated/attio.tools.js"
-import type { AttioGeneratedTools } from "./terse.generated/attio.tools.js"
-import { attioTriggers } from "./terse.generated/attio.triggers.js"
-import { snowflakeTools, snowflakeSkill } from "./terse.generated/snowflake.tools.js"
-import type { SnowflakeGeneratedTools } from "./terse.generated/snowflake.tools.js"
 
 export * from "./terse.generated/common.js"
 export * from "./terse.generated/terse.tools.js"
 export * from "./terse.generated/terse.triggers.js"
 export * from "./terse.generated/github.tools.js"
 export * from "./terse.generated/github.triggers.js"
-export * from "./terse.generated/hey_reach.tools.js"
-export * from "./terse.generated/hey_reach.triggers.js"
 export * from "./terse.generated/resend.tools.js"
-export * from "./terse.generated/apollo.tools.js"
-export * from "./terse.generated/gmail.tools.js"
-export * from "./terse.generated/gmail.triggers.js"
-export * from "./terse.generated/linear.tools.js"
-export * from "./terse.generated/linear.triggers.js"
 export * from "./terse.generated/slack.tools.js"
 export * from "./terse.generated/slack.triggers.js"
-export * from "./terse.generated/notion.tools.js"
 export * from "./terse.generated/posthog.tools.js"
-export * from "./terse.generated/launchdarkly.tools.js"
-export * from "./terse.generated/workos.tools.js"
-export * from "./terse.generated/workos.triggers.js"
-export * from "./terse.generated/attio.schemas.js"
-export * from "./terse.generated/attio.tools.js"
-export * from "./terse.generated/attio.triggers.js"
-export * from "./terse.generated/snowflake.tools.js"
 
 // ── Triggers ──────────────────────────────────────────────────
 
@@ -397,9 +158,6 @@ export * from "./terse.generated/snowflake.tools.js"
  */
 export const Triggers = {
     github: githubTriggers,
-    heyReach: heyReachTriggers,
-    gmail: gmailTriggers,
-    linear: linearTriggers,
     slack: slackTriggers,
     /** Built-in: run on a cron schedule */
     schedule: scheduleTriggers,
@@ -407,8 +165,6 @@ export const Triggers = {
     webhook: webhookTriggers,
     /** Built-in: trigger when a query against the live web matches a schema */
     webMonitor: webMonitorTriggers,
-    workOS: workOSTriggers,
-    attio: attioTriggers,
 }
 
 // ── Skills ────────────────────────────────────────────────────
@@ -424,18 +180,8 @@ export const Skills = {
     github: githubSkill,
     /** Resend — send transactional email using generated published templates */
     resend: resendSkill,
-    /** Apollo — enrich people and companies and search for prospects */
-    apollo: apolloSkill,
-    /** Gmail — send emails */
-    gmail: gmailSkill,
-    /** Gmail — create draft emails (no auto-send) */
-    gmailDraft: gmailDraftSkill,
-    /** Linear — read and write issues, optionally scoped to a team or project */
-    linear: linearSkill,
     /** Slack — send messages and manage threads in a specific channel */
     slack: slackSkill,
-    /** Notion — read and write to the given databases or pages */
-    notion: notionSkill,
     /** Web — built-in web search, page extraction, and multi-source research */
     web: webSkill,
     /** ImageEdit — edit and generate images */
@@ -444,32 +190,16 @@ export const Skills = {
     memory: memorySkill,
     /** PostHog — query analytics for a specific project */
     posthog: posthogSkill,
-    /** LaunchDarkly — read and toggle feature flags in a project + environments */
-    launchDarkly: launchDarklySkill,
-    /** WorkOS — manage users, organizations and invitations */
-    workOS: workOSSkill,
-    /** Attio — query and upsert records on a CRM object */
-    attio: attioSkill,
-    /** Snowflake — run SQL queries against your warehouse */
-    snowflake: snowflakeSkill,
 }
 
 // ── Typed Tools ───────────────────────────────────────────────
 
 export type GeneratedTools = {
-    apollo: ApolloGeneratedTools
-    attio: AttioGeneratedTools
     github: GithubGeneratedTools
-    gmail: GmailGeneratedTools
-    launchdarkly: LaunchdarklyGeneratedTools
-    linear: LinearGeneratedTools
-    notion: NotionGeneratedTools
     posthog: PosthogGeneratedTools
     resend: ResendGeneratedTools
     slack: SlackGeneratedTools
-    snowflake: SnowflakeGeneratedTools
     terse: TerseGeneratedTools
-    workos: WorkosGeneratedTools
 }
 
 declare module "terse-sdk" {
@@ -481,19 +211,11 @@ declare module "terse-sdk" {
 function createTools(agent: TerseAgent): GeneratedTools {
     const allowed: Set<string> = new Set(agent.skills.map(config => config.integrationType))
     return {
-        ...(allowed.has("apollo") ? { apollo: apolloTools } : {}),
-        ...(allowed.has("attio") ? { attio: attioTools } : {}),
         ...(allowed.has("github") ? { github: githubTools } : {}),
-        ...(allowed.has("gmail") ? { gmail: gmailTools } : {}),
-        ...(allowed.has("launchdarkly") ? { launchdarkly: launchdarklyTools } : {}),
-        ...(allowed.has("linear") ? { linear: linearTools } : {}),
-        ...(allowed.has("notion") ? { notion: notionTools } : {}),
         ...(allowed.has("posthog") ? { posthog: posthogTools } : {}),
         ...(allowed.has("resend") ? { resend: resendTools } : {}),
         ...(allowed.has("slack") ? { slack: slackTools } : {}),
-        ...(allowed.has("snowflake") ? { snowflake: snowflakeTools } : {}),
         ...(allowed.has("terse") ? { terse: terseTools } : {}),
-        ...(allowed.has("workos") ? { workos: workosTools } : {}),
     } as GeneratedTools
 }
 
@@ -514,17 +236,9 @@ function createTools(agent: TerseAgent): GeneratedTools {
  * ```
  */
 export const toolbox: GeneratedTools = {
-    apollo: apolloTools,
-    attio: attioTools,
     github: githubTools,
-    gmail: gmailTools,
-    launchdarkly: launchdarklyTools,
-    linear: linearTools,
-    notion: notionTools,
     posthog: posthogTools,
     resend: resendTools,
     slack: slackTools,
-    snowflake: snowflakeTools,
     terse: terseTools,
-    workos: workosTools,
 }

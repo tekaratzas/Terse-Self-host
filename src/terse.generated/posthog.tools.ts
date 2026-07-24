@@ -412,20 +412,20 @@ export type PosthogGeneratedTools = {
 
 export const posthogTools: PosthogGeneratedTools = {
     searchLogs: (params: SearchPosthogLogsParams) =>
-        TerseAgent.executeTool<SearchPosthogLogsResult>("searchPosthogLogs", { ...(params), integrationId: "cmk77jh1b00odot2pm0x9qy53" }),
+        TerseAgent.executeTool<SearchPosthogLogsResult>("searchPosthogLogs", { ...(params), integrationId: "cmr9jgvgn0001y5uz1kcdoic0" }),
     searchSessions: (params: SearchPosthogSessionsParams) =>
-        TerseAgent.executeTool<SearchPosthogSessionsResult>("searchPosthogSessions", { ...(params), integrationId: "cmk77jh1b00odot2pm0x9qy53" }),
+        TerseAgent.executeTool<SearchPosthogSessionsResult>("searchPosthogSessions", { ...(params), integrationId: "cmr9jgvgn0001y5uz1kcdoic0" }),
     getSessionEvents: (params: GetPosthogSessionEventsParams) =>
-        TerseAgent.executeTool<GetPosthogSessionEventsResult>("getPosthogSessionEvents", { ...(params), integrationId: "cmk77jh1b00odot2pm0x9qy53" }),
+        TerseAgent.executeTool<GetPosthogSessionEventsResult>("getPosthogSessionEvents", { ...(params), integrationId: "cmr9jgvgn0001y5uz1kcdoic0" }),
     listEventNames: (params: ListPosthogEventNamesParams) =>
-        TerseAgent.executeTool<ListPosthogEventNamesResult>("listPosthogEventNames", { ...(params), integrationId: "cmk77jh1b00odot2pm0x9qy53" }),
+        TerseAgent.executeTool<ListPosthogEventNamesResult>("listPosthogEventNames", { ...(params), integrationId: "cmr9jgvgn0001y5uz1kcdoic0" }),
     searchEvents: (params: SearchPosthogEventsParams) =>
-        TerseAgent.executeTool<SearchPosthogEventsResult>("searchPosthogEvents", { ...(params), integrationId: "cmk77jh1b00odot2pm0x9qy53" }),
+        TerseAgent.executeTool<SearchPosthogEventsResult>("searchPosthogEvents", { ...(params), integrationId: "cmr9jgvgn0001y5uz1kcdoic0" }),
 }
 
 // ── PostHog skill ─────────────────────────────────────────────
 
 /** PostHog — query analytics for a specific project */
 export function posthogSkill(opts: { project: PosthogProject }): TypedSkill<never> {
-    return new PosthogConfig("cmk77jh1b00odot2pm0x9qy53", opts.project.projectId, opts.project.name)
+    return new PosthogConfig("cmr9jgvgn0001y5uz1kcdoic0", opts.project.projectId, opts.project.name)
 }

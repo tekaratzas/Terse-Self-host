@@ -10,27 +10,7 @@ export class SlackChannel {
     constructor(public readonly channelId: string, public readonly name: string) {}
 
     static AllTerseInc = new SlackChannel("C09DEL0AUE5", "all-terse-inc")
-    static BugReports = new SlackChannel("C0A8P5UBTHN", "bug-reports")
-    static BugsDemo = new SlackChannel("C0AB64HPTEZ", "bugs-demo")
-    static BugsTest = new SlackChannel("C0AACEP0W5T", "bugs-test")
-    static CiCd = new SlackChannel("C09PJ0U7PM0", "ci-cd")
-    static CompetitorReport = new SlackChannel("C0ADU54C88K", "competitor-report")
-    static DealDesk = new SlackChannel("C0BE2J7QYNQ", "deal-desk")
-    static DependencyUpdates = new SlackChannel("C0AH9H6AF62", "dependency-updates")
-    static Gtm = new SlackChannel("C0BFJN1M44F", "gtm")
-    static LandingPageVisitors = new SlackChannel("C0B1EP863DK", "landing-page-visitors")
-    static MonthlyUpdates = new SlackChannel("C0AC01QUH45", "monthly-updates")
-    static NewSignups = new SlackChannel("C0AM9LU85EF", "new-signups")
-    static OlivierTerseNotifications = new SlackChannel("C0A9YKCR1H9", "olivier-terse-notifications")
-    static PricingUpdates = new SlackChannel("C0B2FPD51PD", "pricing-updates")
-    static ReleaseNotes = new SlackChannel("C0ADAUS4RM0", "release-notes")
-    static SessionUsage = new SlackChannel("C0AM0J9534Z", "session-usage")
-    static TechNews = new SlackChannel("C0B0J8P00MB", "tech-news")
-    static TerseStagingTesting = new SlackChannel("C0A9Y4MG2S0", "terse-staging-testing")
-    static TestAgents = new SlackChannel("C0AAEUEHX2N", "test-agents")
-    static TestTerseBot = new SlackChannel("C0AABE2C813", "test-terse-bot")
-    static TweetsRedditPost = new SlackChannel("C0B1GM9CV0Q", "tweets-reddit-post")
-    static UserFeedback = new SlackChannel("C0A2TKE27PV", "user-feedback")
+    static MpdmOlivierTerse2Terse3Thomas1 = new SlackChannel("C0A2DV3N4GL", "mpdm-olivier--terse2--terse3--thomas-1")
 }
 
 export class SlackUser {
@@ -192,18 +172,18 @@ Supports pagination: if the response includes nextCursor and hasMore, pass nextC
 
 export const slackTools: SlackGeneratedTools = {
     sendMessage: (params: SlackSendMessageParams) =>
-        TerseAgent.executeTool<SlackSendMessageResult>("slack_send_message", { ...(params), integrationId: "cmqkqugbc00btp82aoy6cpofv" }),
+        TerseAgent.executeTool<SlackSendMessageResult>("slack_send_message", { ...(params), integrationId: "cmr3r2xb80002y5em42x4nqae" }),
     listUsers: (params: SlackListUsersParams) =>
-        TerseAgent.executeTool<SlackListUsersResult>("slack_list_users", { ...(params), integrationId: "cmqkqugbc00btp82aoy6cpofv" }),
+        TerseAgent.executeTool<SlackListUsersResult>("slack_list_users", { ...(params), integrationId: "cmr3r2xb80002y5em42x4nqae" }),
     listChannels: (params: SlackListChannelsParams) =>
-        TerseAgent.executeTool<SlackListChannelsResult>("slack_list_channels", { ...(params), integrationId: "cmqkqugbc00btp82aoy6cpofv" }),
+        TerseAgent.executeTool<SlackListChannelsResult>("slack_list_channels", { ...(params), integrationId: "cmr3r2xb80002y5em42x4nqae" }),
     readConversation: (params: SlackReadConversationParams) =>
-        TerseAgent.executeTool<SlackReadConversationResult>("slack_read_conversation", { ...(params), integrationId: "cmqkqugbc00btp82aoy6cpofv" }),
+        TerseAgent.executeTool<SlackReadConversationResult>("slack_read_conversation", { ...(params), integrationId: "cmr3r2xb80002y5em42x4nqae" }),
 }
 
 // ── Slack skill ───────────────────────────────────────────────
 
 /** Slack — send messages and manage threads in a specific channel */
 export function slackSkill(opts: { channel: SlackChannel; userIds?: string[]; userNames?: string[]; listenToUserDms?: boolean }): TypedSkill<"slack_send_message"> {
-    return new SlackOutputConfig("cmqkqugbc00btp82aoy6cpofv", opts.channel.channelId ?? null, opts.channel.name ?? null, opts.userIds ?? [], opts.userNames ?? null, opts.listenToUserDms)
+    return new SlackOutputConfig("cmr3r2xb80002y5em42x4nqae", opts.channel.channelId ?? null, opts.channel.name ?? null, opts.userIds ?? [], opts.userNames ?? null, opts.listenToUserDms)
 }

@@ -1,5 +1,6 @@
 import { WebhookInputConfig, createJob } from "terse-sdk"
 import { z } from "zod"
+import { Triggers } from "./terse.generated.js"
 
 const payloadSchema = z.object({ message: z.string().optional() })
 
@@ -7,7 +8,7 @@ const payloadSchema = z.object({ message: z.string().optional() })
 // from server.ts so it's loaded before requests arrive.
 createJob({
     name: "Example webhook job",
-    triggers: [new WebhookInputConfig()],
+    triggers: [Triggers.webhook.onRequest()],
     onTrigger: async event => {
         const payload = payloadSchema.parse(event.body)
         console.log("Received trigger payload:", payload)
